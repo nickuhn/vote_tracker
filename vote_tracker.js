@@ -2,7 +2,6 @@ $(function () {
   var kittens = [];
   var voteSubmitted = false;
 
-  //Kitten object constructor.
   function Kitten(path) {
     this.source = path;
     this.votes = 0;
@@ -26,9 +25,10 @@ $(function () {
   };
 
   //Take in vote by clicking on picture, add vote to object value
-  //Update DOM with new text based on vote and highlight winning pic.
+  //Update DOM with new text based on vote and highlight winning pic
   $('.voteable').on('click', function(){
     if (!voteSubmitted) {
+      kittens = JSON.parse(localStorage.getItem('kittens'));
       voteSubmitted = true;
       var displayVotes = 0;
       var hateVotes = 0;
@@ -54,6 +54,7 @@ $(function () {
       $this.append('<h3 id="cat-love">I have ' + displayVotes + ' vote(s). I feel so loved.</h3>');
       $this.siblings('div').append('<h3 id="cat-hate"> You may not love me, but ' + hateVotes + ' people with better taste do!');
       $('.new-cat-button').fadeIn(750);
+      localStorage.setItem('kittens', JSON.stringify(kittens));
     }
   });
 
@@ -73,5 +74,4 @@ $(function () {
     $('.cat1').attr('src', pickCat1).hide().fadeIn(400);
     $('.cat2').attr('src', pickCat2).hide().fadeIn(400);
   });
-
 });
