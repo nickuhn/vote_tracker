@@ -1,0 +1,55 @@
+/*font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Architects Daughter', cursive;
+cream: background: #F9E4AD
+salmon: background: #E6B098
+pink: background: #CC4452
+lightpurple: background: #723147
+darkpurple: background: #31152B;
+*/
+body {
+  background-color: #F9E4AD;
+  /*font-family: 'Roboto Condensed', sans-serif;*/
+  font-family: 'Architects Daughter', cursive;
+}
+header {
+  background-color: #31152B;
+  color: #E6B098;
+  text-align: center;
+  padding: 15px 5px 5px 5px;
+}
+.new-cat-button {
+  display: none;
+}
+
+div p {
+  font-size: 2em;
+  text-align: center;
+}
+
+img {
+  border: 15px solid #F9E4AD;
+  width: 95%;
+  margin-right: 2%;
+}
+.cat2 {
+  margin-left: -2%;
+}
+button {
+  padding: 0;
+  background-color: #723147;
+  color: #F9E4AD;
+  border: 2px solid #31152B;
+  font-size: 1.5em;
+}
+
+button:hover {
+  color: #E6B098;
+  border: 2px solid #E6B098;
+}
+
+.footer-text {
+  text-align: center;
+  color: #31152B;
+  font-size: 1em;
+}
+
