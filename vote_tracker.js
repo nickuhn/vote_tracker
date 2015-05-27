@@ -25,8 +25,10 @@ $(function () {
       voteSubmitted = true;
       var displayVotes = 0;
       var hateVotes = 0;
-      var catOneId = $(this).children().attr('src');
-      var catTwoId = $(this).siblings().children().attr('src');
+      $this = $(this);
+      $siblings = $this.siblings()
+      var catOneId = $this.children().attr('src');
+      var catTwoId = $siblings.children().attr('src');
       for (var i = 0; i < kittens.length; i++) {
         if (kittens[i].source == catTwoId) {
           hateVotes = kittens[i].votes;
@@ -38,12 +40,12 @@ $(function () {
           displayVotes = kittens[j].votes;
         }
       }
-      $(this).find('p').text('Happy and cuddled');
-      $(this).siblings().find('p').text('So sad and lonely.');
-      $(this).find('img').css({'border': '15px solid #CC4452'});
-      $(this).siblings().find('img').css({'border': '15px solid #F9E4AD'});
-      $(this).append('<h3 id="cat-love">I have ' + displayVotes + ' vote(s). I feel so loved.</h3>');
-      $(this).siblings('div').append('<h3 id="cat-hate"> You may not love me, but ' + hateVotes + ' people with better taste do!');
+      $this.find('p').text('Happy and cuddled');
+      $siblings.find('p').text('So sad and lonely.');
+      $this.find('img').css({'border': '15px solid #CC4452'});
+      $siblings.find('img').css({'border': '15px solid #F9E4AD'});
+      $this.append('<h3 id="cat-love">I have ' + displayVotes + ' vote(s). I feel so loved.</h3>');
+      $this.siblings('div').append('<h3 id="cat-hate"> You may not love me, but ' + hateVotes + ' people with better taste do!');
       $('.new-cat-button').fadeIn(500);
     }
   });
