@@ -8,15 +8,22 @@ $(function () {
     this.votes = 0;
   }
 
+  //AJAX request that is used to build the kitten array.
+  $.ajax({'url': 'https://api.imgur.com/3/album/antzU.json',
+    'beforeSend': function(xhr) {
+      xhr.setRequestHeader('Authorization', 'Client-ID 6324b24166570d9');
+    },
+    success: function(data){
+      for (var i = 0; i < data.data.images.length; i++) {
+        kittens.push(new Kitten(data.data.images[i].link));
+      }
+    }
+  });
+
   var chooseRandomPics = function() {
     var index = Math.floor(Math.random() * kittens.length);
     return kittens[index].source;
   };
-
-  //Make array of kitten objects
-  for (var i = 1; i < 15; i++) {
-    kittens.push(new Kitten('contestants/' + i + '.jpg'));
-  }
 
   //Take in vote by clicking on picture, add vote to object value
   //Update DOM with new text based on vote and highlight winning pic.
@@ -25,8 +32,8 @@ $(function () {
       voteSubmitted = true;
       var displayVotes = 0;
       var hateVotes = 0;
-      $this = $(this);
-      $siblings = $this.siblings()
+      var $this = $(this);
+      var $siblings = $this.siblings();
       var catOneId = $this.children().attr('src');
       var catTwoId = $siblings.children().attr('src');
       for (var i = 0; i < kittens.length; i++) {
@@ -46,7 +53,7 @@ $(function () {
       $siblings.find('img').css({'border': '15px solid #F9E4AD'});
       $this.append('<h3 id="cat-love">I have ' + displayVotes + ' vote(s). I feel so loved.</h3>');
       $this.siblings('div').append('<h3 id="cat-hate"> You may not love me, but ' + hateVotes + ' people with better taste do!');
-      $('.new-cat-button').fadeIn(500);
+      $('.new-cat-button').fadeIn(750);
     }
   });
 
@@ -63,8 +70,8 @@ $(function () {
     while(pickCat1 == pickCat2){
       pickCat2 = chooseRandomPics();
     }
-    $('.cat1').attr('src', pickCat1);
-    $('.cat2').attr('src', pickCat2);
+    $('.cat1').attr('src', pickCat1).hide().fadeIn(400);
+    $('.cat2').attr('src', pickCat2).hide().fadeIn(400);
   });
 
 });
