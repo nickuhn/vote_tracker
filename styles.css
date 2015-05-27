@@ -3,12 +3,14 @@ body {
   background-color: #F9E4AD;
   font-family: 'Architects Daughter', cursive;
 }
+
 header {
   background-color: #31152B;
   color: #E6B098;
   text-align: center;
   padding: 15px 5px 5px 5px;
 }
+
 .new-cat-button {
   display: none;
 }
@@ -18,14 +20,20 @@ div p {
   text-align: center;
 }
 
-img {
+#vote1, #vote2 {
+  cursor: pointer;
+}
+
+.cat1, .cat2 {
   border: 15px solid #F9E4AD;
   width: 95%;
   margin-right: 2%;
 }
+
 .cat2 {
   margin-left: -2%;
 }
+
 button {
   padding: 0;
   background-color: #723147;
