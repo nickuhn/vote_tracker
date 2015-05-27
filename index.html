@@ -9,21 +9,20 @@
       <link rel="stylesheet" type="text/css" href="skeleton.css">
       <link rel="stylesheet" type="text/css" href="styles.css">
       <script src="HTTP://code.jquery.com/jquery-1.11.3.min.js"></script>
-      <script type="text/javascript" src="tp_estimator.js"></script>
+      <script type="text/javascript" src="vote_tracker.js"></script>
       <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,700|Architects+Daughter' rel='stylesheet' type='text/css'>
     </head>
   <body class="container">
     <header class="row">
-      <h1 class="siteHeadline twelve columns">Cutest Kitten Pageant!</h1>
+      <h1 class="siteHeadline twelve columns">Cutest Kitten Face-Off!</h1>
     </header>
     <main>
-      <section class="photos row">
-        <img class="six columns" src="http://i.imgur.com/QBZjjMe.jpg">
-        <img class="six columns" src="http://i.imgur.com/QBZjjMe.jpg">
+      <section class="vote row">
+        <div id="vote1" class="six columns voteable"><img class="cat1" src="contestants/1.jpg"><p class="cat-caption">Click to vote for me!</p></div>
+        <div id="vote2" class="six columns voteable"><img class="cat2" src="contestants/5.jpg"><p class="cat-caption">Click to vote for me!</p></div>
       </section>
-      <section class="buttons row">
-        <button type="button" id="vote1" class="offset-by-two two columns">Vote for me!</button>
-        <button type="button" id="vote2" class="offset-by-four two columns">Vote for me!</button>
+      <section class="new-cat row">
+        <button type="button" class="new-cat-button offset-by-four four columns">Want more cats?</button>
       </section>
     </main>
     <footer class="row">
