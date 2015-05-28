@@ -1,0 +1,22 @@
+{
+  "name": "cutest_kitten_faceoff",
+  "version": "0.42.0",
+  "description": "Puts up two cute kitten pics and has user choose the cutest.",
+  "main": "vote_tracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickuhn/vote_tracker.git"
+  },
+  "author": "Nick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickuhn/vote_tracker/issues"
+  },
+  "homepage": "https://github.com/nickuhn/vote_tracker#readme",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
