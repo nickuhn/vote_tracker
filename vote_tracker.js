@@ -15,6 +15,9 @@ $(function () {
     })
     .done(function(data){
       makeCats(data);
+    })
+    .fail(function(){
+      $('.voteable').html('<p>Sorry we are out of kittens right now</p>')
     });
 
   var makeCats = function(response) {
