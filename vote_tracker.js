@@ -8,8 +8,8 @@ $(function () {
   }
 
   //AJAX request that is used to build the kitten array.
-  $.ajax({'url': 'https://api.imgur.com/3/album/antzU.json',
-          'beforeSend': function(xhr) {
+  $.ajax({ url: 'https://api.imgur.com/3/album/antzU.json',
+          beforeSend: function(xhr) {
             xhr.setRequestHeader('Authorization', 'Client-ID 6324b24166570d9');
           }
     })
@@ -17,14 +17,14 @@ $(function () {
       makeCats(data);
     })
     .fail(function(){
-      $('.voteable').html('<p>Sorry we are out of kittens right now</p>')
+      $('.voteable').html('<p>Sorry we are out of kittens right now</p>');
     });
 
   var makeCats = function(response) {
     for (var i = 0; i < response.data.images.length; i++) {
     kittens.push(new Kitten(response.data.images[i].link));
     }
-  }
+  };
 
   var chooseRandomPics = function() {
     var index = Math.floor(Math.random() * kittens.length);
