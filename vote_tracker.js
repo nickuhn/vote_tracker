@@ -12,9 +12,9 @@ $(function () {
     'beforeSend': function(xhr) {
       xhr.setRequestHeader('Authorization', 'Client-ID 6324b24166570d9');
     },
-    success: function(data){
-      for (var i = 0; i < data.data.images.length; i++) {
-        kittens.push(new Kitten(data.data.images[i].link));
+    success: function(response){
+      for (var i = 0; i < response.data.images.length; i++) {
+        kittens.push(new Kitten(response.data.images[i].link));
       }
     }
   });
