@@ -12,18 +12,21 @@ $(function () {
           beforeSend: function(xhr) {
             xhr.setRequestHeader('Authorization', 'Client-ID 6324b24166570d9');
           }
-    })
-    .done(function(data){
-      makeCats(data);
-    })
-    .fail(function(){
-      $('.voteable').html('<p>Sorry we are out of kittens right now</p>');
-    });
+  })
+  .done(function(data){
+    makeCats(data);
+  })
+  .fail(function(){
+    $('.voteable').html('<p>Sorry we are out of kittens right now</p>');
+  });
 
   var makeCats = function(response) {
     for (var i = 0; i < response.data.images.length; i++) {
-    kittens.push(new Kitten(response.data.images[i].link));
+      kittens.push(new Kitten(response.data.images[i].link));
     }
+    if (localStorage.getItem('kittens') === null) {
+      localStorage.setItem('kittens', JSON.stringify(kittens));
+    };
   };
 
   var chooseRandomPics = function() {
