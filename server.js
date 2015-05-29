@@ -4,7 +4,7 @@ var app = express();
 app.use(express.static('vote_tracker_files'));
 
 app.get('/secret', function(req, res) {
-  res.send('The cake is a lie');
+  res.send(process.env.SECRET);
 });
 
 app.use(function (req, res) {
