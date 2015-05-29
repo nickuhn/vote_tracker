@@ -9,12 +9,7 @@ app.get('/secret', function(req, res) {
 
 app.use(function (req, res) {
   var options = {
-    root: __dirname + '/vote_tracker_files/',
-    dotfiles: 'deny',
-    headers: {
-        'x-timestamp': Date.now(),
-        'x-sent': true
-    }
+    root: __dirname + '/vote_tracker_files/'
   };
   res.sendFile('404.html', options, function (err) {
     if (err) {
